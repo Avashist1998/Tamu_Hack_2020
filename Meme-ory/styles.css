@@ -9,6 +9,10 @@ html, body {margin:0;padding:0;height:100%;width:100%;overflow: hidden;}
 	background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 	color: white;
 	opacity: 0.95;
+	margin:0 auto;
+}
+#grad1 h1{
+	margin-left:12%;
 }
 
 .button {
@@ -27,9 +31,6 @@ html, body {margin:0;padding:0;height:100%;width:100%;overflow: hidden;}
   width:100px; 
   --top:50%; 
   --left:50%;
-}
-
-.button3 {
 	border-radius: 8px;
 	position: relative;
 	height: 95%;
@@ -37,6 +38,7 @@ html, body {margin:0;padding:0;height:100%;width:100%;overflow: hidden;}
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 5vw;
 	border: medium solid #06C;
+	margin-left:25% ;
 }
 
 .button:hover {
@@ -48,7 +50,6 @@ html, body {margin:0;padding:0;height:100%;width:100%;overflow: hidden;}
 h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10vw;
-	text-alighn: center;
 }
 
 h2 {

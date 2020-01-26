@@ -8,7 +8,7 @@
 body {
 	background-image: url(assets/stripes.jpg);
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	background-color: black;
 	overflow: hidden;
 }
@@ -23,9 +23,39 @@ body {
     	<div style="width:100%; height:25%;" align="center">
             <h2>New Memes</h2>
         </div>
-        <div style="width:100%; height:25%;" align="center">
-        	<iframe align="middle">$response</iframe>
+        <div style="width:100%; height:25%;" align="center" class="imageHolder">
         </div>
 	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <script>
+	  $(
+		  $.get("https://api.imgflip.com/get_memes",(data) => {
+			  //console.log(data.data.memes[0].url);
+			  imageId = data.data.memes[0].id;
+			  $.ajax({
+				  url: "https://api.imgflip.com/caption_image",
+				  type:"POST",
+				  data:{
+					  template_id:imageId,
+					  username:"anurag.l.iyer",
+					  password:"qwerty@123",
+					  text0:"Top Text",
+					  text1:"Bottom Text"
+				  },
+					success: function(result){
+    				$(".imageHolder").html("<img src='"+ result.data.url + "'/>");
+					//console.log(result.data.url);
+				},
+				failure:function(data){
+					console.log(data);
+				}});
+			  //$(".imageHolder").html("<img src='"+ data.memes[0].url+ "'>")
+		  })
+	  )
+  </script>
 </body>
 </html>
